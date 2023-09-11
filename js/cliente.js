@@ -1,22 +1,11 @@
-const enderecoForm = document.querySelector(".form-body")
-const cepinput = document.querySelector("#cep")
-const ruainput = document.querySelector("#rua")
-const bairroinput = document.querySelector("#bairro")
-const cidadeinput = document.querySelector("#cidade")
-const estadoinput = document.querySelector("#estado")
+var enderecoForm = document.querySelector(".form-body");
+ var cepinput = document.querySelector("#cep");
+var ruainput = document.querySelector("#rua");
+var bairroinput = document.querySelector("#bairro");
+var cidadeinput = document.querySelector("#cidade");
+var estadoinput = document.querySelector("#estado");
+var formInput = document.querySelector("[data-input]");
 
-cepinput.addEventListener("keypress",(e) =>{
-
-const onlyNumbers = /[0-9]/;
-const tecla = String.fromCharCode(e.keyCode);
-
-
-if(onlyNumbers.test(tecla)){
-   e.preventDefault();
-   return;
-}
-
-} );
 
 cepinput.addEventListener("keyup",(e) => {
 
@@ -26,11 +15,17 @@ if(inputvalue.length === 8){
 }
 });
 
-const getEmdereco = (cep) => {
+var getEmdereco =  async (cep) => {
 
     const apiURL = `https://viacep.com.br/ws/${cep}/json/`;
     const response = await fetch(apiURL)
     const data = await response.json();
-    Console.log(data);
+    console.log(data);
+    console.log(formInput);
+    console.log(data.erro);
+    ruainput.value = data.logradouro;
+    cidadeinput.value = data.localidade;
+    bairroInput.value = data.bairro;
+    estadoInput.value = data.uf;
 }
-}
+
