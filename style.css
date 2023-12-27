@@ -4,6 +4,13 @@
    font-family: 'roboto';
 }
 
+body {
+  background: linear-gradient(to bottom, #FFD6E7, #FFFFFF);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Adapte a fonte conforme necessÃ¡rio */
+}
+
 main{
 
     width: 100vw;
