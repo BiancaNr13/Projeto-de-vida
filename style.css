@@ -11,6 +11,12 @@ body {
   font-family: Arial, sans-serif; /* Adapte a fonte conforme necessÃ¡rio */
 }
 
+.produto-container{
+     display:flex;
+     width:100%;
+     justify-content: space-around;
+}
+
 main{
 
     width: 100vw;
@@ -23,6 +29,7 @@ main{
     align-items: center;
 
 }
+
 
 
 form{
@@ -82,3 +89,9 @@ input:focus{
         width: 100vw;
         height: 50vh;
     }
+
+@media scream and (max-width: -768px){
+       .produto-container{
+           Width:100%;
+             Flex-direction: column; }
+}
